@@ -50,7 +50,7 @@ var app = new Vue({
         // 'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
       }
       try {
-        let response = await axios.post('18.218.77.52:4000/api/v1/notification', this.userDataEmail, {
+        let response = await axios.post('http://18.218.77.52:4000/api/v1/notification', this.userDataEmail, {
           headers: headers
         })
         console.log(response);
