@@ -31,9 +31,41 @@ var app = new Vue({
           "to_message": "+525518519533",
           "from_message": "+15032129249"
         },
+        "methods": ["email"]
+      }
+    },
+    userDataSms: {
+      "notification": {
+        "transaction": {
+          "id": 1,
+          "destiny": "llenriquelopez@gmail.com",
+          "account": 1234,
+          "reference": 3534,
+          "date": "2019-08-24",
+          "name": "Erique López",
+          "amount": 255,
+          "to_message": "+525518519533",
+          "from_message": "+15032129249"
+        },
+        "methods": ["sms"]
+      }
+    },
+    userDataEmailSms: {
+      "notification": {
+        "transaction": {
+          "id": 1,
+          "destiny": "llenriquelopez@gmail.com",
+          "account": 1234,
+          "reference": 3534,
+          "date": "2019-08-24",
+          "name": "Erique López",
+          "amount": 255,
+          "to_message": "+525518519533",
+          "from_message": "+15032129249"
+        },
         "methods": ["email", "sms"]
       }
-    }    
+    }
   },
   methods: {
     handleOpenModal() {
