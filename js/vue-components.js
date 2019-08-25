@@ -21,17 +21,19 @@ var app = new Vue({
     userDataEmail: {
       "notification": {
         "transaction": {
-          "id": 101,
+          "id": 1,
           "destiny": "llenriquelopez@gmail.com",
           "account": 1234,
           "reference": 3534,
           "date": "2019-08-24",
-          "name": "Edin Ramirez",
-          "amount": 255
+          "name": "Erique López",
+          "amount": 255,
+          "to_message": "+525518519533",
+          "from_message": "+15032129249"
         },
-        "methods": ["email"]
+        "methods": ["email", "sms"]
       }
-    }
+    }    
   },
   methods: {
     handleOpenModal() {
@@ -40,17 +42,14 @@ var app = new Vue({
     handleCloseModal() {
       this.modalVisible = false;
     },
-    async testPost() {
+    async sendVoucher() {
       const headers = {
         'Content-Type': 'application/json',
-        // 'Authorization': 'JWT fefege...',
         'Access-Control-Allow-Origin': '*',
-        // 'Access-Control-Request-Method': 'POST',
-        // 'Access-Control-Request-Headers': 'X-Custom-Header',  
-        // 'Access-Control-Allow-Methods' : 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
       }
       try {
         let response = await axios.post('http://18.218.77.52:4000/api/v1/notification', this.userDataEmail)
+        alert("Mensaje enviado...")
         console.log(response);
       } catch (error) {
         console.log(error);
@@ -62,6 +61,6 @@ var app = new Vue({
     // axios
     //   .get('https://api.coindesk.com/v1/bpi/currentprice.json')
     //   .then(response => (this.info = response))
-    this.testPost()
+    // this.testPost()
   }
 })
